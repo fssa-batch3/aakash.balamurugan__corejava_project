@@ -1,6 +1,7 @@
 package day02.solved;
 
-public class Person {
+public class Person { // create a class
+	
     private String name;  // Private data member
 
     public String getName() {  // Public getter method
@@ -13,13 +14,11 @@ public class Person {
     }
     
     public static void main(String[] args) {
+
     	// Usage
     	Person person = new Person();
     	person.setName("John");      // Setting the name using the setter method
     	String name = person.getName();  // Accessing the name using the getter method
     	System.out.println(name);    // Output: John
-    }
 	}
-
-
-
+}

@@ -1,8 +1,14 @@
 package day02.solved;
 
-public class Calculator {
-    public int add(int a, int b) {
-        return a + b;
+/*
+ * 	Method overloading in java
+ */
+
+
+public class Calculator { // create a class
+	 
+    public int add(int a, int b) { // create a method to add two integers
+        return a + b; //  return the integer 
     }
     
     public double add(double a, double b) {
@@ -12,8 +18,8 @@ public class Calculator {
     public String add(String a, String b) {
         return a + b;
     }
-    
     public static void main(String[] args) {
+    	// Usage
     	Calculator calc = new Calculator();
     	System.out.println(calc.add(2, 3));           // Output: 5
     	System.out.println(calc.add(2.5, 3.7));       // Output: 6.2
