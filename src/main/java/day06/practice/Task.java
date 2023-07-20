@@ -5,11 +5,19 @@ import java.util.ArrayList;
 public class Task {
     public String taskName;
     public int priority;
+    
+    public Task(){
+    	
+    }
 
     // Constructor
     public Task(String taskName, int priority) {
         this.taskName = taskName;
         this.priority = priority;
+    }
+    
+    public String getName() {
+    	return this.taskName;
     }
 
     // Getters and setters (not necessary for this example)

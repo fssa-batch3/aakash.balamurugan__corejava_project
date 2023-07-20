@@ -1,48 +1,75 @@
 package day08.practice;
 
-import java.util.*;
+//Practice problem
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.TreeMap;
 
 public class Practice2 {
-	public static void main(String[] args) {
-		TreeMap<String, TreeSet<String>> departmentEmployees = new TreeMap<>();
 
-		// Sample input
-		String[] in = { "HR,Ram", "HR,Suresh", "IT,Joseph", "IT,Basker", "Admin,Sundar" };
+	public static String printEmpNameByDept(List<String> inputLines) {
+		
+		// Validating your method arguments
+		if(inputLines == null || inputLines.size() == 0) {
+			return "";
+		}
+		Map<String, List<String>> departmentEmployeeMap = new TreeMap<String, List<String>>();
 
-		// Process the input
-		for (String i : in) {
-			String[] split = i.split(",");
-			String department = split[0];
-			String employee = split[1];
-
-			// Check if the department already exists in the HashMap
-			if (departmentEmployees.containsKey(department)) {
-				// If it exists, add the employee to the existing list
-				TreeSet<String> employees = departmentEmployees.get(department);
-				
+		// Creating a Treemap of Deptname, List of EmployeeNames.
+		for (String input : inputLines) {
+			String[] parts = input.split(",");
+			String department = parts[0].trim();
+			String employee = parts[1].trim();
+			if (departmentEmployeeMap.containsKey(department)) {// IT
+				List<String> employees = departmentEmployeeMap.get(department);
 				employees.add(employee);
 			} else {
-				// If it doesn't exist, create a new list with the employee and add it to the
-				// HashMap
-				TreeSet<String> employees = new TreeSet<>();
-				employees.add(employee);
-				departmentEmployees.put(department, employees);
+				List<String> employees = new ArrayList<String>();
+				employees.add(employee);// ARAVIND ADD
+				departmentEmployeeMap.put(department, employees);// IT: ARAVIND
 			}
 		}
-		
-//		 TreeSet<String> tree_set= new TreeSet<String>();
-		Object[] keys = departmentEmployees.keySet().toArray();
-//		Object[] values = departmentEmployees.get().toArray();
-		for(int i =0;i<keys.length;i++) {
-			System.out.print(keys[i]+": ");
-			Object[] values = departmentEmployees.get(keys[i]).toArray();
-			for (int j = 0; j < values.length; j++) {
-				System.out.print(values[i]+", ");
-				
+
+		StringBuilder outputString = new StringBuilder("");
+
+		for (String department : departmentEmployeeMap.keySet()) {
+			List<String> employees = departmentEmployeeMap.get(department);
+			Collections.sort(employees);
+
+			outputString.append(department + ":");
+
+			for (int i = 0; i < employees.size(); i++) {
+				outputString.append(employees.get(i));
+				if (i != employees.size() - 1) {
+					outputString.append(",");
+				}
 			}
-			System.out.println();
+
+			outputString.append(System.lineSeparator());
 		}
-		
-//		System.out.println(departmentEmployees);
+
+		return outputString.toString();
+	}
+
+	public static void main(String[] args) {
+
+
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.println("Enter department name and employee name type exit to stop the loop:");
+		String input = scanner.nextLine();
+		List<String> inputLines = new ArrayList<String>();
+
+		while (!input.equalsIgnoreCase("exit")) {
+			inputLines.add(input);
+			input = scanner.nextLine();
+		}
+
+		scanner.close();
+		System.out.println(printEmpNameByDept(inputLines));
+
 	}
 }
