@@ -1,13 +1,18 @@
 package day11.solved;
 
-
+/**
+ * 
+ */
 
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
  
-
+/**
+ * @author BharathwajSoundarara
+ *
+ */
 
 public class UserInsertQuery {
  
@@ -27,7 +32,7 @@ public class UserInsertQuery {
          
          
         //Step 04: close the connection resources       
-        rs.close();
+      
         stmt.close();
         connection.close();
          

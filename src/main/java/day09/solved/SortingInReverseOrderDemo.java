@@ -10,22 +10,20 @@ public class SortingInReverseOrderDemo {
 		deptNames.add("D");
 		deptNames.add("A");
 		deptNames.add("C");
-		 
+
 		System.out.println("Before Sorting: " + deptNames);
 		Collections.sort(deptNames);
 		System.out.println("After Sorting: " + deptNames);
-		 
+
 		Collections.reverse(deptNames);
 		System.out.println("Reverse:" + deptNames);
-		
-		
-		
+
 		ArrayList<String> deptNames2 = new ArrayList<String>();
 		deptNames2.add("B");
 		deptNames2.add("D");
 		deptNames2.add("A");
 		deptNames2.add("C");
-		
+
 		System.out.println("Before Sorting in reverse: " + deptNames);
 		Collections.sort(deptNames2, Collections.reverseOrder());
 		System.out.println("Reverse in reverse Order:" + deptNames2);

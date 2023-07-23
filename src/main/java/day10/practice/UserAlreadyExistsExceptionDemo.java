@@ -60,7 +60,7 @@ class UserValidator {
 		if (user == null) {
 			throw new UserAlreadyExistsException("object cannot null");
 		}
-		
+	
 		for(User element:arr) {
 			if(element.emailId.equals(user.getEmailId())) {
 				throw new UserAlreadyExistsException("User Already added");
@@ -70,13 +70,14 @@ class UserValidator {
 	arr.add(user);
 		System.out.println("User added");
 		return true;
-	}
+		}
+	
 }
-public class practice2 {
+public class UserAlreadyExistsExceptionDemo {
 	
 	public static void main(String[] args) {
 		User user1=new User(1, "sandeep", "sandeep@gmail.com");
-		User user2=new User(1, "sandeep", "ssandeep@gmail.com");
+		User user2=new User(2, "sandeep", "sandeepsan@gmail.com");
 	boolean data1=UserValidator.register(user1);
 	boolean data2=UserValidator.register(user2);
 	System.out.println(data1);

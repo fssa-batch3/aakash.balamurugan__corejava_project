@@ -1,11 +1,21 @@
 package day12.solved;
 
+/**
+ * 
+ */
+
+
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
- import day11.solved.*;
 
+import day11.solved.ConnectionUtil;
+ 
+/**
+ * @author BharathwajSoundarara
+ *
+ */
 
 public class UserQuery {
  

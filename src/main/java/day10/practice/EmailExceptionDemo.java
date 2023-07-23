@@ -1,7 +1,5 @@
 package day10.practice;
 
-package day10.practice;
-
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

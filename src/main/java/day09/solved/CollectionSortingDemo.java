@@ -1,7 +1,6 @@
 package day09.solved;
 
 import java.util.ArrayList;
-
 import java.util.Collections;
 
 public class CollectionSortingDemo {
